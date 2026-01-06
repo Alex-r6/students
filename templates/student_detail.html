@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{student.фамилия}}</title>
+</head>
+<body>
+<h2>Last name:{{student.фамилия}}</h2>
+<h2>Groupe:{{student.id_группы}}</h2>
+{% for faculty in faculties  %}
+    <p>{{faculty.факультет}}</p>
+{% endfor %}
+</body>
+</html>

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Hello{% endblock%}
+
+{% block main %}
+{% for worker in worker_list %}
+<p>{{worker.first_name}} {{worker.last_name}}</p>
+{% endfor %}
+<br>
+<form action="{{ url_for('add_worker') }}"  method="post">
+    <div class="row">
+        <div class="col-3">
+            <input type="text" name="username" placeholder="username" class="form-control"/>
+            <input type="text" name="first_name" placeholder="first_name" class="form-control"/>
+            <input type="text" name="last_name" placeholder="last_name" class="form-control"/>
+            <select  name="dep_id" class="form-control">
+                {% for dep in dep_list %}
+                <option value="{{dep.id}}">{{dep.name}}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Add" class="btn btn-danger"/>
+        </div>
+    </div>
+</form>
+{% endblock %}
